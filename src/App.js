@@ -32,7 +32,9 @@ function DisplayResults({ refreshDisplay }) {
 
   useEffect(() => {
     // Fetch data from the API when the component mounts
-    fetch("http://127.0.0.1:5000/get_sentences")
+    fetch(
+      "https://hindi-pos-tagging-api-1e20c6ebda23.herokuapp.com/get_sentences"
+    )
       .then((response) => response.json())
       .then((data) => {
         // Update state with the fetched data
@@ -69,15 +71,18 @@ function DisplayResults({ refreshDisplay }) {
 
   const savePOSEdit = async (index) => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/pos_edit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          edits: edit,
-        }),
-      });
+      const response = await fetch(
+        "https://hindi-pos-tagging-api-1e20c6ebda23.herokuapp.com/pos_edit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            edits: edit,
+          }),
+        }
+      );
       const json = await response.json();
       console.log("resonse", json);
       const tagCounts = {};
@@ -160,15 +165,18 @@ function App() {
 
   const handleGenerateTags = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/pos_tagger", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          sentence: currentSentence.replace(/\s+/g, " ").trim(),
-        }),
-      });
+      const response = await fetch(
+        "https://hindi-pos-tagging-api-1e20c6ebda23.herokuapp.com/pos_tagger",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            sentence: currentSentence.replace(/\s+/g, " ").trim(),
+          }),
+        }
+      );
       const data = await response.json();
       console.log(data);
       setSentencePosPairs([
