@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 const tagToMeaning = {
   NN: "Noun",
@@ -91,22 +92,17 @@ function DisplayResults({ refreshDisplay }) {
       Object.entries(json).forEach(([parentIndex, subarrays]) => {
         // Initialize an object to store tag counts for the current parent index
         tagCounts[parentIndex] = {};
-
-        // Iterate over each subarray within the current parent index
-        subarrays.forEach((subarray, arrayIndex) => {
-          // Initialize an object to store tag counts for the current array index
-          tagCounts[parentIndex][arrayIndex] = {};
-
-          // Iterate over each tag within the subarray
-          subarray.forEach((tag) => {
-            // Initialize count for the current tag if it doesn't exist
-            if (!tagCounts[parentIndex][arrayIndex][tag]) {
-              tagCounts[parentIndex][arrayIndex][tag] = 0;
+        for (let i = 0; i < subarrays[0].length; i++) {
+          const counts = {};
+          for (let j = 0; j < subarrays.length; j++) {
+            if (!counts.hasOwnProperty(subarrays[j][i])) {
+              counts[subarrays[j][i]] = 0;
             }
-            // Increment the count for the current tag
-            tagCounts[parentIndex][arrayIndex][tag]++;
-          });
-        });
+            counts[subarrays[j][i]] += 1;
+          }
+          console.log("counts", counts);
+          tagCounts[parentIndex][i] = counts;
+        }
       });
 
       setTagVotes(tagCounts);

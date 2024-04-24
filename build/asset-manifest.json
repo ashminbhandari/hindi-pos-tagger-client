@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hindi-pos-tagger-client/static/css/main.87680161.css",
-    "main.js": "/hindi-pos-tagger-client/static/js/main.70d36135.js",
+    "main.js": "/hindi-pos-tagger-client/static/js/main.eb837709.js",
     "static/js/453.419a5d54.chunk.js": "/hindi-pos-tagger-client/static/js/453.419a5d54.chunk.js",
     "index.html": "/hindi-pos-tagger-client/index.html",
     "main.87680161.css.map": "/hindi-pos-tagger-client/static/css/main.87680161.css.map",
-    "main.70d36135.js.map": "/hindi-pos-tagger-client/static/js/main.70d36135.js.map",
+    "main.eb837709.js.map": "/hindi-pos-tagger-client/static/js/main.eb837709.js.map",
     "453.419a5d54.chunk.js.map": "/hindi-pos-tagger-client/static/js/453.419a5d54.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.87680161.css",
-    "static/js/main.70d36135.js"
+    "static/js/main.eb837709.js"
   ]
 }
