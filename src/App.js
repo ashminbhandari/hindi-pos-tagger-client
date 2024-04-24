@@ -7,7 +7,7 @@ function App() {
 
   const handleGenerateTags = async () => {
     try {
-      const response = await fetch('pos_tagger', {
+      const response = await fetch('https://hindi-pos-tagging-api-1e20c6ebda23.herokuapp.com/pos_tagger', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
