@@ -1,5 +1,6 @@
 {
   "homepage": "http://ashminbhandari.github.io/hindi-pos-tagger-client",
+  "proxy": "https://hindi-pos-tagging-api-1e20c6ebda23.herokuapp.com",
   "name": "client",
   "version": "0.1.0",
   "private": true,
